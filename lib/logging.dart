@@ -12,44 +12,44 @@ int _currentStep;
 class _AccountPageState extends State<AccountPage> {
   List<Step> steps = [
     Step(
-      title: const Text('New Account'),
+      title: const Text('Enter your Phone Number'),
       isActive: true,
       state: StepState.complete,
       content: Column(
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(labelText: 'Email Address'),
+            decoration: InputDecoration(labelText: 'Phone Number'),
           ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Password'),
-          ),
+         
         ],
       ),
     ),
     Step(
       isActive: false,
       state: StepState.editing,
-      title: const Text('Address'),
+      title: const Text('Verification Code'),
       content: Column(
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(labelText: 'Home Address'),
-          ),
-          TextFormField(
-            decoration: InputDecoration(labelText: 'Postcode'),
+            decoration: InputDecoration(labelText: 'Code'),
+          ), 
           ),
         ],
       ),
     ),
     Step(
       state: StepState.error,
-      title: const Text('Avatar'),
+      title: const Text('Profile'),
       subtitle: const Text("Error!"),
       content: Column(
         children: <Widget>[
           CircleAvatar(
             backgroundColor: Colors.red,
           )
+             TextFormField(
+            decoration: InputDecoration(labelText: 'Display Name'),
+          ),
+
         ],
       ),
     ),
